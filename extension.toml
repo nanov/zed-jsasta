@@ -5,3 +5,7 @@ schema_version = 1
 authors = ["JSasta Contributors"]
 description = "Language support for JSasta - a JavaScript-like language that compiles to native code"
 repository = "https://github.com/nanov/zed-jsasta"
+
+[grammars.jsasta]
+repository = "https://github.com/nanov/zed-jsasta"
+rev = "374f3831ce9c18a5159ab6a2c230e7008aefff53"
