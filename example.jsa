@@ -1,0 +1,164 @@
+// JSasta Syntax Highlighting Example
+// This file demonstrates all the language features
+
+/*
+ * Multi-line comment
+ * Testing syntax highlighting
+ */
+
+external printf(string, ...):int;
+external puts(string):int;
+
+// Struct without defaults
+struct Point {
+    x: int;
+    y: int;
+}
+
+// Struct with default values
+struct Vector3D {
+    x: int = 0;
+    y: int = 0;
+    z: int = 0;
+}
+
+// Struct with mixed required/optional
+struct Config {
+    width: int = 800;
+    height: int = 600;
+    title: string;
+    enabled: bool = true;
+}
+
+// Function with type annotations
+function add(a: int, b: int): int {
+    return a + b;
+}
+
+// Function with type inference
+function multiply(x, y) {
+    return x * y;
+}
+
+// Function with variadic parameters (external only for now)
+external sprintf(buffer: string, format: string, ...): int;
+
+// Main function
+function main(): int {
+    // Variable declarations
+    var x = 10;
+    let y: int = 20;
+    const PI: double = 3.14159;
+
+    // Struct instantiation
+    var p1: Point = { x: 5, y: 15 };
+    var p2: Point = { x: 10, y: 20 };
+
+    // Struct with defaults
+    var v1: Vector3D = { x: 1, y: 2, z: 3 };
+    var v2: Vector3D = { x: 5 };  // y=0, z=0 from defaults
+    var v3: Vector3D = { };       // all defaults
+
+    // Struct with mixed fields
+    var cfg: Config = { title: "My App" };
+
+    // Arithmetic operators
+    var sum = x + y;
+    var diff = x - y;
+    var prod = x * y;
+    var quot = x / y;
+    var mod = x % y;
+
+    // Comparison operators
+    var isEqual = (x == y);
+    var isNotEqual = (x != y);
+    var isLess = (x < y);
+    var isGreater = (x > y);
+    var isLessEq = (x <= y);
+    var isGreaterEq = (x >= y);
+
+    // Logical operators
+    var andResult = (x > 5 && y < 30);
+    var orResult = (x > 100 || y < 10);
+    var notResult = !(x == y);
+
+    // Bitwise operators
+    var bitwiseAnd = x & y;
+    var bitwiseOr = x | y;
+    var bitwiseXor = x ^ y;
+    var leftShift = x << 2;
+    var rightShift = x >> 1;
+
+    // Compound assignment
+    x += 5;
+    y -= 3;
+    sum *= 2;
+    quot /= 2;
+
+    // Increment/decrement
+    x++;
+    y--;
+    ++x;
+    --y;
+
+    // Property access
+    printf("Point 1: (%d, %d)\n", p1.x, p1.y);
+    printf("Point 2: (%d, %d)\n", p2.x, p2.y);
+
+    // Expressions with properties
+    var distance = (p2.x - p1.x) + (p2.y - p1.y);
+
+    // Control flow - if/else
+    if (x > y) {
+        puts("x is greater");
+    } else if (x < y) {
+        puts("y is greater");
+    } else {
+        puts("equal");
+    }
+
+    // For loop
+    for (var i = 0; i < 10; i++) {
+        printf("Iteration %d\n", i);
+    }
+
+    // While loop
+    var count = 0;
+    while (count < 5) {
+        printf("Count: %d\n", count);
+        count++;
+    }
+
+    // Ternary operator
+    var max = (x > y) ? x : y;
+
+    // Arrays
+    var numbers = [1, 2, 3, 4, 5];
+    var first = numbers[0];
+    numbers[2] = 42;
+
+    // Anonymous objects
+    var obj = { a: 1, b: 2, c: 3 };
+    var value = obj.a;
+
+    // String literals
+    var greeting = "Hello, World!";
+    var path = "C:\\Users\\test\\file.txt";
+
+    // Number literals
+    var integer = 42;
+    var floating = 3.14159;
+    var negative = -100;
+
+    // Boolean literals
+    var isTrue = true;
+    var isFalse = false;
+
+    // Function calls
+    var result = add(10, 20);
+    var product = multiply(5, 6);
+
+    printf("Result: %d\n", result);
+
+    return 0;
+}
